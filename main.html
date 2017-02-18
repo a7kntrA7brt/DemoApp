@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title> Home Page </title>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+  <div data-role="page" class="jqm-demos ui-responsive-panel" id="active">
+     <div data-role="header">
+          <h1>Dita</h1>
+          <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+          <div data-role="navbar">
+            <ul>
+              <li><a href="#" class="ui-btn-active ui-state-persist">ACTIVE</a></li>
+              <li><a href="#pending">PENDING</a></li>
+              <li><a href="#closed">CLOSED</a></li>
+            </ul>
+          </div>
+     </div>
+
+     <div data-role="main"class="ui-content jqm-content jqm-fullwidth">
+        <p>Active Data</p>
+        <div data-role="collapsible">
+          <h1>Trip Saving</h1>
+          <p>Money Pot: 2000 mxn</p>
+          <p>Payments:100 mxn every Month</p>
+          <p>My Money Pot Date : 12/Dec/2017 </p>
+          <div data-role="collapsible">
+            <h1>Dita buddies</h1>
+            <p>Bort</p>
+            <p>Pumba</p>
+            <p>Yoda</p>
+          </div>
+        </div>
+        <a href="newdita.html" rel="external" data-role="button" data-icon="plus" data-iconpos="notext"></a>
+        <a href="../" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>
+     </div>
+     <div data-role="footer">
+       <h2>&copy; Death Angel 2017</h2>
+     </div>
+  </div>
+
+  <div data-role="page" class="jqm-demos ui-responsive-panel" id="pending">
+     <div data-role="header">
+          <h1>Dita</h1>
+          <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+          <div data-role="navbar">
+            <ul>
+              <li><a href="#active">ACTIVE</a></li>
+              <li><a href="#" class="ui-btn-active ui-state-persist">PENDING</a></li>
+              <li><a href="#closed">CLOSED</a></li>
+            </ul>
+          </div>
+     </div>
+
+     <div data-role="main"class="ui-content">
+        <h2>Dita Created by me</h2>
+        <div data-role="collapsible">
+          <h1>Other Reason</h1>
+          <p>Money Pot: 3000 mxn</p>
+          <p>Payments:300 mxn every Month</p>
+          <p>My Money Pot Date : 12/Dec/2017 </p>
+          <div data-role="collapsible">
+            <h1>Invited buddies</h1>
+            <p>BB8</p>
+            <p>Timba</p>
+            <p>Hulk</p>
+          </div>
+        </div>
+
+        <h2>Dita Im invited to</h2>
+        <div data-role="collapsible">
+          <h1>OtherStuff</h1>
+          <p>Money Pot: 3000 mxn</p>
+          <p>Payments:300 mxn every Month</p>
+          <p>My Money available Dates : </p>
+          <div data-role="collapsible">
+            <h1>Invited buddies</h1>
+            <p>BB8</p>
+            <p>Timba</p>
+            <p>Hulk</p>
+          </div>
+        </div>
+
+     </div>
+     <div data-role="footer">
+       <h2>&copy; Death Angel 2017</h2>
+     </div>
+  </div>
+
+  <div data-role="page"class="jqm-demos ui-responsive-panel" id="closed">
+     <div data-role="header">
+          <h1>Dita</h1>
+          <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+          <div data-role="navbar">
+            <ul>
+              <li><a href="#active">ACTIVE</a></li>
+              <li><a href="#pending">PENDING</a></li>
+              <li><a href="#" class="ui-btn-active ui-state-persist">CLOSED</a></li>
+            </ul>
+          </div>
+     </div>
+
+     <div data-role="main"class="ui-content">
+        <p>Closed Data</p>
+     </div>
+     <div data-role="footer">
+       <h2>&copy; Death Angel 2017</h2>
+     </div>
+  </div>
+
+  <div data-role="panel" data-display="reveal" id="nav-panel">
+      <ul data-role="listview">
+          <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+              <li><a href="#panel-responsive-page2">Accordion</a></li>
+              <li><a href="#panel-responsive-page2">Ajax Navigation</a></li>
+              <li><a href="#panel-responsive-page2">Autocomplete</a></li>
+      </ul>
+  </div><!-- /panel -->
+
+</body>
+</html>

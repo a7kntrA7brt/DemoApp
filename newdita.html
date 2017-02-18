@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Dita</title>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+  <div data-role="page" id="MoneyPot">
+    <div data-role="header">
+      <h1>Dita</h1>
+      <a href="#home-dialog" data-rel="dialog back" class="ui-btn-right" rel="external" data-role="button" data-icon="home" data-iconpos="notext"></a>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#" class="ui-btn-active ui-state-persist">MONEY POT</a></li>
+          <li><a href="#payments">PAYMENTS</a></li>
+          <li><a href="#friends">FRIENDS</a></li>
+          <li><a href="#finish">FINISH</a></li>
+        </ul>
+      </div>
+    </div>
+    <div data-role="main"class="ui-content">
+      <p>Money Pot</p>
+      <form>
+        <textarea name="inputMPot" rows="8" cols="80"></textarea>
+      </form>
+      <a href="#payments" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a>
+    </div>
+    <div data-role="footer">
+      <h2>&copy; Death Angel 2017</h2>
+    </div>
+  </div>
+  <div data-role="page" id="payments">
+    <div data-role="header">
+      <h1>Dita</h1>
+      <a href="#home-dialog" data-rel="dialog back" class="ui-btn-right" rel="external" data-role="button" data-icon="home" data-iconpos="notext"></a>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#MoneyPot">MONEY POT</a></li>
+          <li><a href="#" class="ui-btn-active ui-state-persist">PAYMENTS</a></li>
+          <li><a href="#friends">FRIENDS</a></li>
+          <li><a href="#finish">FINISH</a></li>
+        </ul>
+      </div>
+    </div>
+    <div data-role="main"class="ui-content">
+      <p>How Often do you want to deposit to this Money Pot</p>
+      <div class="ui-field-contain">
+        <label for="select-choice-1" class="select">Payment re-currence:</label>
+        <select name="select-choice-1" id="select-choice-1">
+          <option value="standard">Weekly:every Week</option>
+          <option value="rush">BiWeekly:every 2 Week</option>
+          <option value="express">Monthly:Once a month</option>
+        </select>
+      </div>
+      <a href="#friends" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a>
+    </div>
+    <div data-role="footer">
+      <h2>&copy; Death Angel 2017</h2>
+    </div>
+  </div>
+  <div data-role="page" id="friends">
+    <div data-role="header">
+      <h1>Dita</h1>
+      <a href="#home-dialog" data-rel="dialog back" class="ui-btn-right" rel="external" data-role="button" data-icon="home" data-iconpos="notext"></a>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#MoneyPot">MONEY POT</a></li>
+          <li><a href="#payments" >PAYMENTS</a></li>
+          <li><a href="#" class="ui-btn-active ui-state-persist">FRIENDS</a></li>
+          <li><a href="#finish">FINISH</a></li>
+        </ul>
+      </div>
+    </div>
+    <div data-role="main"class="ui-content">
+      <p>Invite friends to your Dita</p>
+      <div data-role="collapsible">
+        <h3>My data friends</h3>
+        <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom">
+        <label for="checkbox-1a">Bort</label>
+
+        <input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom">
+        <label for="checkbox-2a">Pumba</label>
+
+        <input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom">
+        <label for="checkbox-3a">Yoda</label>
+
+      </div>
+      <p>------------</p>
+      <input type="button" value="Invite Facebook friends">
+      <p>------------</p>
+      <label for="email">New friend e-mail:</label>
+      <input type="text" name="email" id="email" value="">
+      <a href="#finish" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a>
+    </div>
+    <div data-role="footer">
+      <h2>&copy; Death Angel 2017</h2>
+    </div>
+  </div>
+  <div data-role="page" id="finish">
+    <div data-role="header">
+      <h1>Dita</h1>
+      <a href="#home-dialog" data-rel="dialog back" class="ui-btn-right" rel="external" data-role="button" data-icon="home" data-iconpos="notext"></a>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#MoneyPot">MONEY POT</a></li>
+          <li><a href="#payment">PAYMENTS</a></li>
+          <li><a href="#friends">FRIENDS</a></li>
+          <li><a href="#" class="ui-btn-active ui-state-persist">FINISH</a></li>
+        </ul>
+      </div>
+    </div>
+    <div data-role="main"class="ui-content">
+      <p>Summary of Dita:</p>
+      <table data-role="table" id="my-table" data-mode="reflow">
+        <thead>
+          <tr>
+            <th>Money Pot</th>
+            <th>Re-currence</th>
+            <th>Receive money pot on</th>
+            <th>Friend List</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3000 mxn</td>
+            <td>Bi-weekly</td>
+            <td>12/Dec/2017</td>
+            <td>List of friends</td>
+          </tr>
+        </tbody>
+      </table>
+      <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup">
+          <legend>Agree to the terms:</legend>
+          <input type="checkbox" name="checkbox-agree" id="checkbox-agree" class="custom" />
+          <label for="checkbox-agree">I agree</label>
+        </fieldset>
+      </div>
+      <input type="submit" value="Submit" />
+    </div>
+    <div data-role="footer">
+      <h2>&copy; Death Angel 2017</h2>
+    </div>
+  </div>
+  <div data-role="dialog" id="home-dialog">
+    <div data-role="header">
+        <h1>Warning</h1>
+    </div>
+    <div data-role="content">
+        <p>Your Data has not been saved, are you sure you want to exit?</p>
+        <a href="main.html" rel="external" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="slidedown">YES</a>
+        <a href="#" data-rel="back" rel="external" role="button" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" data-transition="slidedown">CANCEL</a>
+    </div>
+  </div>
+</body>
+</html>
