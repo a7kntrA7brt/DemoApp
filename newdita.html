@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/newDita.js"></script>
 </head>
-
 <body>
   <div data-role="page" id="MoneyPot">
     <div data-role="header">
@@ -24,11 +25,11 @@
       </div>
     </div>
     <div data-role="main"class="ui-content">
-      <p>Money Pot</p>
       <form>
-        <textarea name="inputMPot" rows="8" cols="80"></textarea>
+        <label for="inputMPot">Money pot:</label>
+        <input type="number" name="inputMPot" maxlength="6" min="100" max="100000" pattern="[0-9]*" id="inputMPot" value="" placeholder="100-100000">
       </form>
-      <a href="#payments" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a>
+      <button id="mpnext"  data-icon="arrow-r" data-iconpos="notext" >Submit</button><br/>
     </div>
     <div data-role="footer">
       <h2>&copy; Death Angel 2017</h2>
@@ -48,13 +49,30 @@
       </div>
     </div>
     <div data-role="main"class="ui-content">
+      <table data-role="table" id="mytable" data-mode="columntoggle" class="ui-responsive">
+        <thead>
+        </thead>
+          <tbody>
+        </tbody>
+      </table>
+      <!--
       <p>How Often do you want to deposit to this Money Pot</p>
       <div class="ui-field-contain">
-        <label for="select-choice-1" class="select">Payment re-currence:</label>
+        <label for="select-choice-1" class="select">Charge re-currence:</label>
         <select name="select-choice-1" id="select-choice-1">
-          <option value="standard">Weekly:every Week</option>
-          <option value="rush">BiWeekly:every 2 Week</option>
-          <option value="express">Monthly:Once a month</option>
+          <option value="Weekly">Weekly:every Week</option>
+          <option value="BiWeekly">BiWeekly:every 2 Week</option>
+          <option value="Monthly">Monthly:Once a month</option>
+        </select>
+      </div>
+      -->
+      <p>How Often do you want Dita be Payed</p>
+      <div class="ui-field-contain">
+        <label for="select-choice-2" class="select">Dita Deposit:</label>
+        <select name="select-choice-2" id="select-choice-2">
+          <option value="Weekly">Weekly:every Week</option>
+          <option value="BiWeekly">BiWeekly:every 2 Week</option>
+          <option value="Monthly">Monthly:Once a month</option>
         </select>
       </div>
       <a href="#friends" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a>

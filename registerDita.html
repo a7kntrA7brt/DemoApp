@@ -8,42 +8,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="cordova.js"></script>
-	<script>
-    var db;
-    var msg;
-	  window.onload = function()
-      {
-         document.addEventListener("deviceready", init, false);
-      }
-      function init()
-      {
-          document.getElementById("btnSet").addEventListener("click",saveData, false);
-          db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
-          db.transaction(function (tx) {
-             tx.executeSql('DROP TABLE IF EXISTS LOGS');
-             tx.executeSql('DROP TABLE IF EXISTS PROFILE');
-             tx.executeSql('CREATE TABLE IF NOT EXISTS PROFILE (id auto_increment, txtID text, value text)');
-
-          });
-      }
-      function saveData() {
-
-         var _username = document.getElementById("username").value;
-         var _pass = document.getElementById("password").value;
-         var _email = document.getElementById("email").value;
-         var _bankInfo = document.getElementById("BankInfo").value;
-
-        db.transaction(function (tx) {
-        tx.executeSql('INSERT INTO PROFILE (txtID, value) VALUES (?, ?)',['uname',_username]);
-        tx.executeSql('INSERT INTO PROFILE (txtID, value) VALUES (?, ?)',['email',_email]);
-        tx.executeSql('INSERT INTO PROFILE (txtID, value) VALUES (?, ?)',['pass',_pass]);
-        tx.executeSql('INSERT INTO PROFILE (txtID, value) VALUES (?, ?)',['bankInfo',_bankInfo]);
-        });
-        alert("Your data is Sent successfuly");
-        $.mobile.changePage( "main.html", { transition: "slideup", changeHash: false })
-        }
-	</script>
-
+  <script type="text/javascript" src="js/registerDita.js"></script>
   </head>
   <body>
     <div data-role="page" id="page1" >
