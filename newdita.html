@@ -23,19 +23,27 @@
       <div data-role="navbar">
         <ul>
           <li><a href="#" class="ui-btn-active ui-state-persist">MONEY POT</a></li>
-          <li><a href="#payments">PAYMENTS</a></li>
-          <li><a href="#friends">FRIENDS</a></li>
-          <li><a href="#finish">FINISH</a></li>
+          <li><a href="#" class="ui-disabled">PAYMENTS</a></li>
+          <li><a href="#" class="ui-disabled">FRIENDS</a></li>
+          <li><a href="#"class="ui-disabled">FINISH</a></li>
         </ul>
       </div>
     </div>
     <div data-role="main"class="ui-content">
       <form>
+        <label for="inputDitaName">Name of Dita:</label>
+        <input type="text" name="inputDitaName" id="inputDitaName" value="" placeholder="Ex:Holiday Savings">
         <label for="inputMPot">Money pot:</label>
-        <input type="number" name="inputMPot" maxlength="6" min="100" max="100000" pattern="[0-9]*" id="inputMPot" value="" placeholder="100-100000">
-        <p>Date of first Dita Payment</p>
-        <input type="text" id="date-input" data-inline="false" data-role="date">
+        <div class="ui-field-contain">
+               <input type="number" name="inputMPot" maxlength="6" min="100" max="100000" pattern="[0-9]*" id="inputMPot" value="" placeholder="100-100000">
+               <select name="currslct" id="currslct">
+                  <option value="MXN">MXN</option>
+                  <option value="USD">USD</option>
+              </select>
+        </div>
       </form>
+      <p>Date of first Dita Payment</p>
+      <input type="text" id="date-input" data-inline="false" data-role="date">
       <button id="mpnext"  data-icon="arrow-r" data-iconpos="notext" >Submit</button><br/>
     </div>
     <div data-role="footer">
@@ -50,8 +58,8 @@
         <ul>
           <li><a href="#MoneyPot">MONEY POT</a></li>
           <li><a href="#" class="ui-btn-active ui-state-persist">PAYMENTS</a></li>
-          <li><a href="#friends">FRIENDS</a></li>
-          <li><a href="#finish">FINISH</a></li>
+          <li><a href="#" class="ui-disabled">FRIENDS</a></li>
+          <li><a href="#" class="ui-disabled">FINISH</a></li>
         </ul>
       </div>
     </div>
@@ -71,21 +79,7 @@
       </div>
       <div class="ui-field-contain ui-hidden-accessible"  id="div-payAmount"></div>
       <div class="ui-field-contain ui-hidden-accessible"  id="div-payOpt"></div>
-<!--        <label for="select-choice-0"  class="select">Payment Amount:</label>
-
-        <select name="select-choice-0" id="select-choice-0">
-        </select>
-
-      </div>--->
-<!--        <div class="ui-field-contain" id=selectLabel1>
-      <label for="select-choice-1"  class="select">Payment Options:</label>
-
-        <select name="select-choice-1" id="select-choice-1">
-        </select>
-
-      </div>  --->
-
-      <a href="#friends" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a>
+      <button id="paymntnext"  data-icon="arrow-r" data-iconpos="notext" >Submit</button><br/>
     </div>
     <div data-role="footer">
       <h2>&copy; Death Angel 2017</h2>
@@ -100,7 +94,7 @@
           <li><a href="#MoneyPot">MONEY POT</a></li>
           <li><a href="#payments" >PAYMENTS</a></li>
           <li><a href="#" class="ui-btn-active ui-state-persist">FRIENDS</a></li>
-          <li><a href="#finish">FINISH</a></li>
+          <li><a href="#finish" class="ui-disabled">FINISH</a></li>
         </ul>
       </div>
     </div>
@@ -121,9 +115,12 @@
       <p>------------</p>
       <input type="button" value="Invite Facebook friends">
       <p>------------</p>
-      <label for="email">New friend e-mail:</label>
-      <input type="text" name="email" id="email" value="">
-      <a href="#finish" data-role="button" data-icon="arrow-r" data-iconpos="notext"></a>
+      <div id="TextBoxesGroup">
+         <label for="email">Invite friend:</label>
+         <input type="text" name="email" id="email" value="">
+      </div>
+      <button id="newMail"  data-icon="plus" data-iconpos="notext" >Submit</button><br/>
+      <button id="frndsnext"  data-icon="arrow-r" data-iconpos="notext" >Submit</button><br/>
     </div>
     <div data-role="footer">
       <h2>&copy; Death Angel 2017</h2>
@@ -144,23 +141,9 @@
     </div>
     <div data-role="main"class="ui-content">
       <p>Summary of Dita:</p>
-      <table data-role="table" id="my-table" data-mode="reflow">
-        <thead>
-          <tr>
-            <th>Money Pot</th>
-            <th>Re-currence</th>
-            <th>Receive money pot on</th>
-            <th>Friend List</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>3000 mxn</td>
-            <td>Bi-weekly</td>
-            <td>12/Dec/2017</td>
-            <td>List of friends</td>
-          </tr>
-        </tbody>
+      <table data-role="table" id="summaryTable" data-mode="columntoggle" class="ui-responsive">
+        <thead></thead>
+        <tbody></tbody>
       </table>
       <div data-role="fieldcontain">
         <fieldset data-role="controlgroup">
