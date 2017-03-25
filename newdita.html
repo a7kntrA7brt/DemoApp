@@ -5,13 +5,17 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Create Dita</title>
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
   <link rel="stylesheet"  href="http://code.jquery.com/mobile/git/jquery.mobile-git.css" />
   <link rel="stylesheet" href="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.css" />
+
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script src="https://rawgithub.com/jquery/jquery-ui/1-10-stable/ui/jquery.ui.datepicker.js"></script>
+
   <script src="http://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
   <script src="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.js"></script>
+
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/newDita.js"></script>
 </head>
@@ -30,21 +34,22 @@
       </div>
     </div>
     <div data-role="main"class="ui-content">
+
       <form>
         <label for="inputDitaName">Name of Dita:</label>
         <input type="text" name="inputDitaName" id="inputDitaName" value="" placeholder="Ex:Holiday Savings">
         <label for="inputMPot">Money pot:</label>
         <div class="ui-field-contain">
                <input type="number" name="inputMPot" maxlength="6" min="100" max="100000" pattern="[0-9]*" id="inputMPot" value="" placeholder="100-100000">
-               <select name="currslct" id="currslct">
-                  <option value="MXN">MXN</option>
-                  <option value="USD">USD</option>
-              </select>
         </div>
       </form>
       <p>Date of first Dita Payment</p>
       <input type="text" id="date-input" data-inline="false" data-role="date">
+      <!--
+     <input type="button" data-icon="arrow-r" data-iconpos="notext" id="mpnext">
+      --->
       <button id="mpnext"  data-icon="arrow-r" data-iconpos="notext" >Submit</button><br/>
+
     </div>
     <div data-role="footer">
       <h2>&copy; Death Angel 2017</h2>
@@ -99,7 +104,7 @@
       </div>
     </div>
     <div data-role="main"class="ui-content">
-      <p>Invite friends to your Dita</p>
+      <p id=headertxt>Invite friends to your Dita</p>
       <div data-role="collapsible">
         <h3>My data friends</h3>
         <input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom">
@@ -117,7 +122,7 @@
       <p>------------</p>
       <div id="TextBoxesGroup">
          <label for="email">Invite friend:</label>
-         <input type="text" name="email" id="email" value="">
+         <input type="text" name="textbox1" id="textbox1" value="">
       </div>
       <button id="newMail"  data-icon="plus" data-iconpos="notext" >Submit</button><br/>
       <button id="frndsnext"  data-icon="arrow-r" data-iconpos="notext" >Submit</button><br/>
@@ -139,12 +144,16 @@
         </ul>
       </div>
     </div>
-    <div data-role="main"class="ui-content">
+    <div data-role="main" class="ui-content">
       <p>Summary of Dita:</p>
       <table data-role="table" id="summaryTable" data-mode="columntoggle" class="ui-responsive">
         <thead></thead>
         <tbody></tbody>
       </table>
+      <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" id=frndListClsbl>
+         <h4> Invited friends:</h4>
+           <ul data-role="listview" data-inset="false" id=friendList></ul>
+     </div>
       <div data-role="fieldcontain">
         <fieldset data-role="controlgroup">
           <legend>Agree to the terms:</legend>
@@ -152,7 +161,7 @@
           <label for="checkbox-agree">I agree</label>
         </fieldset>
       </div>
-      <input type="submit" value="Submit" />
+      <input type="button" id="fnshcrt" value="Submit">
     </div>
     <div data-role="footer">
       <h2>&copy; Death Angel 2017</h2>

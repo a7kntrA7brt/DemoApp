@@ -13,7 +13,8 @@ $(document).on("pageshow","#MoneyPot",function() {
       var moneyPot = document.getElementById("inputMPot").value;
       var strdate = document.getElementById("date-input").value;
       var nameDita = document.getElementById("inputDitaName").value;
-      var currDita = document.getElementById("currslct").value;
+    //  var currDita = document.getElementById("currslct").value;
+      var currDita ="MXN"
       if (moneyPot % 100 == 0 && moneyPot != "" ){
          mpin = true;
        }
@@ -22,8 +23,8 @@ $(document).on("pageshow","#MoneyPot",function() {
       }
        if (mpin == true && dtin == true){
          db.transaction(function (tx) {
-            tx.executeSql('DROP TABLE IF EXISTS NEWDITA');
-            tx.executeSql('DROP TABLE IF EXISTS INVITED');
+  //          tx.executeSql('DROP TABLE IF EXISTS NEWDITA');
+  //          tx.executeSql('DROP TABLE IF EXISTS INVITED');
             tx.executeSql('CREATE TABLE IF NOT EXISTS NEWDITA (id auto_increment, id_user, created, message text, pot, frequency, charge, servicecost, start, end, status, pot_frequency, membersnum, currency, author_pot_date, membersmin, name)');
             tx.executeSql('CREATE TABLE IF NOT EXISTS INVITED (id auto_increment, id_proposal, type, id_user, id_guest, created, paydate, status, token, token_expries)');
          });
@@ -40,7 +41,7 @@ $(document).on("pageshow","#MoneyPot",function() {
          var sercost = moneyPot *.5
          var id=1;
          db.transaction(function (tx) {
-            tx.executeSql('INSERT INTO NEWDITA (id, id_user, created, start, pot, currency, servicecost) VALUES (?, ?, ?, ?, ?, ?, ?)',[id,_uid, date, strdate, moneyPot,currDita,sercost]);
+            tx.executeSql('INSERT INTO NEWDITA (id, id_user, created, start, pot, currency, servicecost, name) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',[id,_uid, date, strdate, moneyPot,currDita,sercost,nameDita]);
          });
         clearPayments();
          $.mobile.changePage( "#payments", { transition: "slideup", changeHash: false })
@@ -330,7 +331,7 @@ $(document).on("pageshow","#friends",function() {
 
   document.getElementById("newMail").addEventListener("click", addnewContact, false);
   document.getElementById("frndsnext").addEventListener("click", savefriendData, false);
-
+  $( "#headertxt" ).append( "Friends Needed: "+(counter-1)+"" );
   function addnewContact( ) {
     var newTextBoxDiv = $(document.createElement('div'))
   	     .attr("id", 'TextBoxDiv' + counter);
@@ -379,12 +380,13 @@ $(document).on("pageshow","#finish",function() {
    var mailcontact=[];
    var stat = true;
    var membersmin;
-   for(var k = 0; k < counter && stat == true ; k++) {
-       m=k+2
-       mailcontact[k] = document.getElementById("textbox"+k+"").value;
+   for(var k = 0; k < (counter-1) && stat == true ; k++) {
+       m=k+1
+       mailcontact[k] = document.getElementById("textbox"+m+"").value;
        if (mailcontact[k] == null){
          stat=false;
        }
+
    }
 
    db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
@@ -404,7 +406,8 @@ $(document).on("pageshow","#finish",function() {
 function createSummary(_mP, _date, _payFreq, _chrg, _payopt, _frnds, _mailcontact ) {
   var tbhead= "<thead</thead><tbody>";
   var tbfoot ="</tbody>";
-  var newRows;
+  var newRows="";
+  var newfriendlist ="";
   if(_mP != null){
     newRows+="<tr><th>Money Pot:</th><td> "+_mP+" MXN</td>";
   }
@@ -421,12 +424,26 @@ function createSummary(_mP, _date, _payFreq, _chrg, _payopt, _frnds, _mailcontac
     newRows+="<tr><th>Friends Needed:</th><td> "+_frnds+"</td>";
   }
   for(var l = 0; l < _mailcontact.length ; l++) {
-        newRows+="<tr><th>Friends Invited:</th><td> "+_mailcontact[l]+"</td>";
+        newfriendlist+="<li>"+_mailcontact[l]+"</li>";
       }
-
   $( "#summaryTable" ).empty( )
   var htmltable=tbhead+newRows+tbfoot;
-  $( "table#summaryTable" ).append( htmltable )
-};
+  $( "table#summaryTable" ).append( htmltable );
+  $( "#friendList" ).empty( );
+  $( "#friendList" ).append( newfriendlist );
+  $('#friendList').listview('refresh');
+}
+
+$( "#fnshcrt" ).click( function() {
+
+  if (document.getElementById("checkbox-agree").checked)
+  {
+    window.location.href="main.html";
+    window.location.href.reload(true);
+  }
+  else
+  {alert("did not agree")}
+});
+
 
 });
