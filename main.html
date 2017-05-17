@@ -7,101 +7,89 @@
    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   <script type="text/javascript" src="js/commonFunctions.js"></script>
    <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 
   <div data-role="page" class="jqm-demos ui-responsive-panel" id="active">
      <div data-role="header">
-          <h1>iTanda</h1>
+          <h1>TandaKlub</h1>
           <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
           <div data-role="navbar">
             <ul>
-              <li><a href="#" class="ui-btn-active ui-state-persist">ACTIVE</a></li>
+              <li><a href="#" class="ui-btn-active ui-state-persist">ACTIVAS</a></li>
               <li><a href="#pending">PENDIENTES</a></li>
-              <li><a href="#closed">CERRADOS</a></li>
+              <li><a href="#closed">CERRADAS</a></li>
             </ul>
           </div>
+          <a href="newTanda.html" rel="external" data-role="button" data-icon="plus" data-iconpos="notext" data-position="right"></a>
      </div>
 
      <div data-role="main"class="ui-content jqm-content jqm-fullwidth">
-        <p>Activos</p>
-        <div data-role="collapsible" data-collapsed="false">
-          <h3>Trip Saving</h3>
-          <p>Money Pot: 2000 mxn</p>
-          <p>Payments:100 mxn every Month</p>
-          <p>My Money Pot Date : 12/Dec/2017 </p>
-          <div data-role="collapsible">
-            <h1>Amigos</h1>
-            <p>Bort</p>
-            <p>Pumba</p>
-            <p>Yoda</p>
-          </div>
+       <div data-role="fieldcontain" data-type="horizontal" id="actwarningPlaceHolder">
+       </div>
+        <h3>Tandas en las que participo:</h3>
+        <div data-role="collapsible-set" id="activeTandas">
         </div>
-        <a href="newdita.html" rel="external" data-role="button" data-icon="plus" data-iconpos="notext"></a>
      </div>
      <div data-role="footer">
-       <h2>&copy; iTanda Corp 2017</h2>
+       <h2>&copy; TandaKlub Corp 2017</h2>
      </div>
   </div>
 
   <div data-role="page" class="jqm-demos ui-responsive-panel" id="pending">
      <div data-role="header">
-          <h1>iTanda</h1>
+          <h1>TandaKlub</h1>
           <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
           <div data-role="navbar">
             <ul>
-              <li><a href="#active">ACTIVOS</a></li>
-              <li><a href="#" class="ui-btn-active ui-state-persist">PENDING</a></li>
-              <li><a href="#closed">CERRADOS</a></li>
+              <li><a href="#active">ACTIVAS</a></li>
+              <li><a href="#" class="ui-btn-active ui-state-persist">PENDIENTES</a></li>
+              <li><a href="#closed">CERRADAS</a></li>
             </ul>
           </div>
+          <a href="newTanda.html" rel="external" data-role="button" data-icon="plus" data-iconpos="notext" data-positon ="right"></a>
      </div>
 
      <div data-role="main"class="ui-content">
-       <div data-role="fieldcontain" data-type="horizontal" id="warningPlaceHolder">
+       <div data-role="fieldcontain" data-type="horizontal" id="penwarningPlaceHolder">
        </div>
-        <h3>Tanda que he creado</h3>
-          <div data-role="collapsible-set" id="penCrtedTandas">
+        <h3>Tandas que he creado:</h3>
+          <div data-role="collapsible-set"id="penCrtedTandas">
           </div>
-        <h3>Tanda que he sido invitado</h3>
-        <div data-role="collapsible">
-          <h1>OtherStuff</h1>
-          <p>Money Pot: 3000 mxn</p>
-          <p>Payments:300 mxn every Month</p>
-          <p>My Money available Dates : </p>
-          <div data-role="collapsible">
-            <h1>Invited buddies</h1>
-            <p>BB8</p>
-            <p>Timba</p>
-            <p>Hulk</p>
-          </div>
+        <h3>Tandas en las que he sido invitado</h3>
+        <div data-role="collapsible-set" id="penInvtedTandas">
         </div>
-        <a href="newdita.html" rel="external" data-role="button" data-icon="plus" data-iconpos="notext"></a>
+
      </div>
      <div data-role="footer">
-       <h2>&copy; iTanda Corp 2017</h2>
+       <h2>&copy; TandaKlub Corp 2017</h2>
      </div>
   </div>
 
   <div data-role="page" class="jqm-demos ui-responsive-panel" id="closed">
      <div data-role="header">
-          <h1>iTanda</h1>
+          <h1>TandaKlub</h1>
           <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
           <div data-role="navbar">
             <ul>
-              <li><a href="#active">ACTIVOS</a></li>
+              <li><a href="#active">ACTIVAS</a></li>
               <li><a href="#pending">PENDIENTES</a></li>
-              <li><a href="#" class="ui-btn-active ui-state-persist">CLOSED</a></li>
+              <li><a href="#" class="ui-btn-active ui-state-persist">CERRADAS</a></li>
             </ul>
           </div>
+          <a href="newTanda.html" rel="external" data-role="button" data-icon="plus" data-iconpos="notext" data-position = "right"></a>
      </div>
      <div data-role="main"class="ui-content">
-        <p>Cerrados:</p>
-        <a href="newdita.html" rel="external" data-role="button" data-icon="plus" data-iconpos="notext"></a>
+       <div data-role="fieldcontain" data-type="horizontal" id="closdwarningPlaceHolder">
+       </div>
+        <h3>Tandas que ya terminaron:</h3>
+        <div data-role="collapsible-set" id="closdTandas">
+        </div>
      </div>
      <div data-role="footer">
-       <h2>&copy; iTanda Corp 2017</h2>
+       <h2>&copy; TandaKlub Corp 2017</h2>
      </div>
   </div>
 
@@ -113,6 +101,5 @@
           <li><a href="javascript:logOut();" rel="external">Log Out</a></li>
       </ul>
   </div><!-- /panel -->
-
 </body>
 </html>

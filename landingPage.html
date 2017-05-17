@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bienvenido a iTanda</title>
+    <title>Bienvenido a TandaKlub</title>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -13,31 +13,32 @@
   <body>
     <div data-role="page" id="login">
       <div data-role="header">
-        <h1>iTanda</h1>
+        <h1>TandaKlub</h1>
       </div>
       <div data-role="content">
         <div data-role="fieldcontain" data-type="horizontal" id="warningPlaceHolder">
         </div>
         <p> LOGIN:</p>
-        <a href="#" class="ui-btn ui-shadow">Facebook</a>
-        <p>O</p>
-          <label for="text-basic">E-Mail:</label>
-          <input type="text" name="loginEmail" placeholder="E-Mail" id="loginEmail" >
-          <label for="text-basic">Password:</label>
-          <input type="text" name="Password" placeholder="Password" id="loginPasswrd" >
+        <label for="text-basic">E-Mail:</label>
+        <input type="text" name="loginEmail" placeholder="E-Mail" id="loginEmail" >
+        <label for="text-basic">Password:</label>
+        <input type="text" name="Password" placeholder="Password" id="loginPasswrd" >
 
-          <button type="button" data-mini="false" data-inline="false" id="submitlogin">LOGIN</button>
-          <a href="#passpop" data-rel="popup" data-transition="pop">Olvidaste tu password?</a>
-          <div data-role="popup" id="passpop">
-            <p>Que pena me da tu caso: TBD Implementation</p>
-          </div>
-          <div data-role="fieldcontain" data-type="horizontal">
-             <p>Eres nuevo a iTanda?</p>
-             <a href="registerDita.html" rel="external" ata-inline="true">Registrate aqui</a>
+        <button type="button" data-mini="false" data-inline="false" id="submitlogin">LOGIN</button>
+        <a href="#passpop" data-rel="popup" data-transition="pop">Olvidaste tu password?</a>
+        <div data-role="popup" id="passpop">
+          <p>Que pena me da tu caso: TBD Implementation</p>
+        </div>
+
+        <p>Login con:</p>
+          <a href="#" class="ui-btn ui-shadow">Facebook</a>
+          <div data-role="fieldcontain" data-type="horizontal" data-inline="true" display="inline-block">
+             <p data-inline="true">Eres nuevo a TandaKlub?</p>
+             <a href="registerUser.html" rel="external" data-position="right">Registrate aqui</a>
           </div>
       </div>
       <div data-role="footer">
-        <h2>&copy; iTanda Corp 2017</h2>
+        <h2>&copy; TandaKlub Corp 2017</h2>
       </div>
     </div>
   </body>
