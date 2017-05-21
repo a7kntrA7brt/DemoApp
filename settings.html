@@ -9,6 +9,26 @@
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/settings.js"></script>
+  <style type="text/css">
+  @media ( min-width: 10em ) {
+      /* Show the table header rows and set all cells to display: table-cell */
+      .my-custom-breakpoint td,
+      .my-custom-breakpoint th,
+      .my-custom-breakpoint tbody th,
+      .my-custom-breakpoint tbody td,
+      .my-custom-breakpoint thead td,
+      .my-custom-breakpoint thead th {
+          display: table-cell;
+          margin: 0;
+      }
+      /* Hide the labels in each cell */
+      .my-custom-breakpoint td .ui-table-cell-label,
+      .my-custom-breakpoint th .ui-table-cell-label {
+          display: none;
+      }
+  }
+  </style>
+
 </head>
 <body>
   <div data-role="page" id="settings" >
@@ -17,7 +37,7 @@
       <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
     </div>
     <div data-role="main" class="ui-content">
-      <table data-role="table" id="settingsTable" data-mode="columntoggle" class="ui-responsive">
+      <table data-role="table" id="settingsTable" data-mode="reflow" class="my-custom-breakpoint">
         <thead></thead>
         <tbody></tbody>
       </table>

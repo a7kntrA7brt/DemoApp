@@ -20,6 +20,26 @@
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/commonFunctions.js"></script>
   <script type="text/javascript" src="js/newTanda.js"></script>
+  <style type="text/css">
+  @media ( min-width: 10em ) {
+      /* Show the table header rows and set all cells to display: table-cell */
+      .my-custom-breakpoint td,
+      .my-custom-breakpoint th,
+      .my-custom-breakpoint tbody th,
+      .my-custom-breakpoint tbody td,
+      .my-custom-breakpoint thead td,
+      .my-custom-breakpoint thead th {
+          display: table-cell;
+          margin: 0;
+      }
+      /* Hide the labels in each cell */
+      .my-custom-breakpoint td .ui-table-cell-label,
+      .my-custom-breakpoint th .ui-table-cell-label {
+          display: none;
+      }
+  }
+  </style>
+
 </head>
 <body>
   <div data-role="page" id="MoneyPot">
@@ -79,7 +99,7 @@
     <div data-role="main"class="ui-content" border="1" cellspacing="0">
       <div data-role="fieldcontain" data-type="horizontal" id="paywarningPlaceHolder">
       </div>
-      <table data-role="table" id="mytable" data-mode="columntoggle" class="ui-responsive">
+      <table data-role="table" id="mytable" data-mode="reflow" class="table">
         <thead></thead>
         <tbody></tbody>
       </table>
@@ -165,7 +185,7 @@
       <div data-role="fieldcontain" data-type="horizontal" id="finshdwarningPlaceHolder">
       </div>
       <p>Resumen:</p>
-      <table data-role="table" id="summaryTable" data-mode="columntoggle" class="ui-responsive">
+      <table data-role="table" id="summaryTable" data-mode="reflow" class="my-custom-breakpoint">
         <thead></thead>
         <tbody></tbody>
       </table>

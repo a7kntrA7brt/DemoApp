@@ -163,8 +163,29 @@ $(document).on("pageshow","#proposalInfo",function() {
 
 
   $("#rejectTandabtn").click(function() {
-
-
+    if (token != null && token != "") {
+    $.ajax({
+    type: "POST",
+    url: "http://tandaklub.com/set/reject?e="+usrEmail+"&p="+usrPass+"&id="+poolId+"&idm="+idm+"&token="+token+"",
+    crossDomain: true,
+    cache: false,
+    dataType: 'json',
+    success: function(result) {
+        if (result.st == 0) {
+          /*TODO:Currently only one error type, add more warnings when available*/
+          if(result.err[0] == "NotFound") {
+            $( "#warningPlaceHolder" ).empty();
+            $( "#warningPlaceHolder" ).append( "<a href='#' class='ui-btn ui-btn-icon-right ui-icon-alert ui-state-disabled' data-inline='true' data-mini='true'>Error al rechazar</a>" );
+            $('#warningPlaceHolder').show();
+          }
+        }
+        else {
+             window.location.href="main.html";
+             window.location.href.reload(true);
+          }
+        }
+    });
+   }
   });
 
 
