@@ -9,6 +9,18 @@
    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
    <script type="text/javascript" src="js/commonFunctions.js"></script>
    <script type="text/javascript" src="js/main.js"></script>
+   <style type="text/css">
+   .headerboxed {
+     border: 1px solid rgb(135, 228, 231);
+     background-color: rgb(215, 250, 251);
+   }
+   .boxed {
+     border: 1px solid rgb(215, 250, 251);
+      background-color: rgb(237, 254, 255);
+   }
+   </style>
+
+
 </head>
 <body>
 
@@ -30,7 +42,9 @@
        <div data-role="fieldcontain" data-type="horizontal" id="actwarningPlaceHolder">
        </div>
         <h3>Tandas en las que participo:</h3>
+        <div class="headerboxed">
         <div data-role="collapsible-set" id="activeTandas">
+        </div>
         </div>
      </div>
      <div data-role="footer">

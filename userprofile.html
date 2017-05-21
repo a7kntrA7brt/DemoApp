@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile</title>
+  <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/userprofile.js"></script>
+</head>
+<body>
+  <div data-role="page" id="settings" >
+    <div data-role="header">
+      <h1>TandaKlub</h1>
+      <a href="main.html" rel="external" role="button"  class="ui-btn-right"  data-icon="home" data-iconpos="notext"></a>
+      <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+    </div>
+    <div data-role="main" class="ui-content">
+      <table data-role="table" id="settingsTable" data-mode="columntoggle" class="ui-responsive">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div data-role="footer">
+      <h2>&copy; TandaKlub Corp 2017</h2>
+    </div>
+  </div>
+
+  <div data-role="panel" data-display="reveal" id="nav-panel">
+      <ul data-role="listview">
+          <li data-icon="delete"><a href="#active" data-rel="close">Close menu</a></li>
+          <li><a href="userprofile.html" rel="external">Profile</a></li>
+          <li><a href="settings.html" rel="external">Settings</a></li>
+      </ul>
+  </div><!-- /panel -->
+
+</body>
+</html>

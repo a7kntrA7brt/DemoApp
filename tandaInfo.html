@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>TandaInFo</title>
+   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   <script type="text/javascript" src="js/commonFunctions.js"></script>
+   <script type="text/javascript" src="js/tandaInfo.js"></script>
+   <style type="text/css">
+   @media ( min-width: 10em ) {
+       /* Show the table header rows and set all cells to display: table-cell */
+       .my-custom-breakpoint td,
+       .my-custom-breakpoint th,
+       .my-custom-breakpoint tbody th,
+       .my-custom-breakpoint tbody td,
+       .my-custom-breakpoint thead td,
+       .my-custom-breakpoint thead th {
+           display: table-cell;
+           margin: 0;
+       }
+       /* Hide the labels in each cell */
+       .my-custom-breakpoint td .ui-table-cell-label,
+       .my-custom-breakpoint th .ui-table-cell-label {
+           display: none;
+       }
+   }
+   .highlight td {
+    background: #A7F4E4;
+    }
+   </style>
+
+</head>
+<body>
+  <div data-role="page" class="jqm-demos ui-responsive-panel" id="tandaInfo">
+     <div data-role="header">
+          <h1>TandaKlub</h1>
+          <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+     </div>
+     <div data-role="main"class="ui-content">
+       <div data-role="fieldcontain" data-type="horizontal" id="warningPlaceHolder">
+       </div>
+       <h3>Informacion de Tanda:</h3>
+       <table data-role="table" id="infoTandaTable" data-mode="reflow" class="my-custom-breakpoint ">
+         <thead></thead>
+         <tbody></tbody>
+       </table>
+       <br>
+       <table data-role="table" id="membersTandaTable" data-mode="reflow" class="my-custom-breakpoint ">
+         <thead></thead>
+         <tbody></tbody>
+       </table>
+        <a href="main.html" rel="external" data-role="button">Regresar</a>
+     </div>
+     <div data-role="footer">
+       <h2>&copy; TandaKlub Corp 2017</h2>
+     </div>
+  </div>
+  <div data-role="panel" data-display="reveal" id="nav-panel">
+      <ul data-role="listview">
+          <li data-icon="delete"><a href="#tandaInfo" data-rel="close">Cerrar menu</a></li>
+          <li><a href="userprofile.html" rel="external">Perfil</a></li>
+          <li><a href="settings.html" rel="external">Configuraciones</a></li>
+          <li><a href="javascript:logout();" rel="external">Log Out</a></li>
+      </ul>
+  </div><!-- /panel -->
+
+</body>
+</html>
